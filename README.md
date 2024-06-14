@@ -1,4 +1,3 @@
-Organo
 Organo é um projeto de organograma desenvolvido com React, utilizando JavaScript. Este projeto permite a criação de cards para colaboradores com informações detalhadas sobre nome, cargo, imagem e o time ao qual pertencem.
 
 Funcionalidades

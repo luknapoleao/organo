@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+Organo é um projeto de organograma desenvolvido com React, utilizando JavaScript. Este projeto permite a criação de cards para colaboradores com informações detalhadas sobre nome, cargo, imagem e o time ao qual pertencem.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Funcionalidades
+Formulário de Criação de Cards
+O componente Formulario permite a criação de novos cards para colaboradores, com os seguintes campos:
 
-## Available Scripts
+Nome: Campo de texto para o nome do colaborador.
+Cargo: Campo de texto para o cargo do colaborador.
+Imagem: Campo de texto para o endereço da imagem do colaborador.
+Time: Lista suspensa com os times disponíveis.
 
-In the project directory, you can run:
+import Botao from '../Botao'
+import CampoTexto from '../CampoTexto'
+import ListaSuspensa from '../ListaSuspensa'
+import './Formulario.css'
 
-### `npm start`
+const Formulario = () => {
+    const times = [
+        'Programação',
+        'Front-End',
+        'Data Science',
+        'Devops',
+        'UX e Design',
+        'Mobile',
+        'Inovação e Gestão'
+    ]
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    return (
+        <section className="formulario">
+            <form>
+                <h2>Preencha os dados para criar o card do colaborador.</h2>
+                <CampoTexto label="Nome" placeholder="Digite seu nome"/>
+                <CampoTexto label="Cargo" placeholder="Digite seu cargo" />
+                <CampoTexto label="Imagem" placeholder="Digite o endereço da imagem" />
+                <ListaSuspensa label="Time" itens={times} />
+                <Botao>Criar Card</Botao>
+            </form>
+        </section>
+    )
+}
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+export default Formulario
 
-### `npm test`
+Lista Suspensa
+O componente ListaSuspensa é usado para selecionar o time do colaborador a partir de uma lista de opções.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+import './ListaSuspensa.css'
 
-### `npm run build`
+const ListaSuspensa = (props) => {
+    return (
+        <div className='lista-suspensa'>
+            <label>{props.label}</label>
+            <select>
+                {props.itens.map(item => {
+                    return <option key={item}>{item}</option>
+                })}
+            </select>
+        </div>
+    )
+}
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+export default ListaSuspensa
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Como Iniciar o Projeto
+Este projeto foi inicializado com Create React App. Para começar a usar, siga os passos abaixo:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Scripts Disponíveis
+No diretório do projeto, você pode executar:
 
-### `npm run eject`
+npm start
+Executa o aplicativo no modo de desenvolvimento.
+Abra http://localhost:3000 para visualizá-lo no navegador.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+A página será recarregada se você fizer edições.
+Você também verá quaisquer erros de lint no console.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm test
+Inicia o executor de testes no modo interativo de observação.
+Veja a seção sobre execução de testes para mais informações.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+npm run build
+Cria o aplicativo para produção na pasta build.
+Ele agrupa corretamente o React no modo de produção e otimiza a construção para obter o melhor desempenho.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+A compilação é minificada e os nomes dos arquivos incluem os hashes.
+Seu aplicativo está pronto para ser implantado!
 
-## Learn More
+Veja a seção sobre implantação para mais informações.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm run eject
+Nota: esta é uma operação sem volta. Uma vez que você eject, você não pode voltar atrás!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Se você não estiver satisfeito com a ferramenta de construção e as escolhas de configuração, você pode eject a qualquer momento. Este comando removerá a única dependência de construção do seu projeto.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Esse é um projeto colaborativo e de aprendizagem fique à vontade para contribuir com ele =) 

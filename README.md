@@ -92,4 +92,6 @@ Nota: esta é uma operação sem volta. Uma vez que você eject, você não pode
 
 Se você não estiver satisfeito com a ferramenta de construção e as escolhas de configuração, você pode eject a qualquer momento. Este comando removerá a única dependência de construção do seu projeto.
 
-Esse é um projeto colaborativo e de aprendizagem fique à vontade para contribuir com ele =) 
+Esse é um projeto colaborativo e de aprendizagem fique à vontade para contribuir com ele 
+
+Confere ai > https://organo-lime-nine.vercel.app/
